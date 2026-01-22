@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Petlja: Brojanje samoglasnika</h1>
+<form method="post">
+    <input type="text" name="rijec" placeholder="Unesi riječ" required>
+    <button type="submit">Prebroji</button>
+</form>
+<p>Broj samoglasnika: {{ broj }}</p>
+{% endblock %}

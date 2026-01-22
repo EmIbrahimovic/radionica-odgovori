@@ -9,14 +9,26 @@
 <body>
     <nav>
         <a href="/">Početna</a>
-        <a href="/ispis">1. Ispis</a>
-        <a href="/varijabla">1.2 Ispis</a>
-        <a href="/unos">1.3 Ispis</a>
-        <a href="/ako">2. Ako/Inače</a>
+        <div class="dropdown">
+            <span class="dropbtn">1. Ispis ▾</span>
+            <div class="dropdown-content">
+                <a href="/ispis">1.1 print()</a>
+                <a href="/varijabla">1.2 Varijabla</a>
+                <a href="/unos">1.3 Unos</a>
+            </div>
+        </div>
+        <a href="/ako">2. Ako / Inače</a>
         <a href="/lista">3. Lista</a>
         <a href="/rjecnik">4. Rječnik</a>
-        <a href="/petlja">5. Petlja</a>
+        <div class="dropdown">
+            <span class="dropbtn">5. Petlja ▾</span>
+            <div class="dropdown-content">
+                <a href="/petlja">5.1 Petlja</a>
+                <a href="/petlja_samoglasnici">5.2 Petlja</a>
+            </div>
+        </div>
     </nav>
+
 
     <div class="container">
         {% block content %}{% endblock %}

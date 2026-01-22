@@ -1,16 +1,28 @@
-
 {% extends "base.html" %}
 {% block content %}
-    <h1>3. lists</h1>
-    <p>A list stores many items in the server's memory.</p>
-    <form method="POST">
-        <input type="text" name="word" placeholder="Type a word" required>
-        <button type="submit">Add</button>
-    </form>
-    <h3>Current List:</h3>
-    <ul>
-        {% for w in words %}
-            <li>{{ w }}</li>
-        {% endfor %}
-    </ul>
+<h1>3. Lista</h1>
+
+<form method="post">
+    <input type="text" name="rijec" placeholder="Nova riječ">
+
+    <button type="submit" name="akcija" value="dodaj">
+        Dodaj
+    </button>
+
+    <button type="submit" name="akcija" value="izbrisi">
+        Izbriši zadnju
+    </button>
+</form>
+
+{% if poruka %}
+    <div class="result-box">
+        {{ poruka }}
+    </div>
+{% endif %}
+
+<ul>
+    {% for rijec in rijeci %}
+        <li>{{ rijec }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}

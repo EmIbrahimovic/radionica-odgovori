@@ -32,6 +32,7 @@ def varijabla_stranica():
     # --- VARIJABLA (Lekcija 1.2) ---
     # TODO (UČENIK):
     # Promijeni vrijednost ove varijable
+    # Ispisati pomocu funkcije print
     poruka = "Zdravo iz backend-a!"
 
     return render_template('print-2.html', poruka=poruka)
@@ -41,10 +42,12 @@ def unos_stranica():
     uneseni_tekst = ""
 
     if request.method == 'POST':
-        # --- INPUT IZ FORME (Lekcija 2.2) ---
-        # TODO (UČENIK):
-        # Dohvati tekst koji je korisnik upisao u input polje
         uneseni_tekst = request.form.get('tekst', '')
+
+    # --- INPUT IZ FORME (Lekcija 2.2) ---
+    # TODO (UČENIK):
+    # Ispisati tekst koji je korisnik upisao u input polje
+
 
     return render_template('print-3.html', uneseni_tekst=uneseni_tekst)
 
@@ -63,11 +66,25 @@ def ako_stranica():
 
 @app.route('/lista', methods=['GET', 'POST'])
 def lista_stranica():
+    poruka = ""
     if request.method == 'POST':
-        nova_rijec = request.form.get('rijec')
-        if nova_rijec:
-            lista_rijeci.append(nova_rijec)
-    return render_template('list.html', rijeci=lista_rijeci)
+        akcija = request.form.get('akcija')
+
+        if akcija == 'dodaj':
+            nova_rijec = request.form.get('rijec')
+            if nova_rijec:
+                lista_rijeci.append(nova_rijec)
+                poruka = "Riječ dodana u listu."
+
+        elif akcija == 'izbrisi':
+            # Provjera da lista nije prazna
+            if not lista_rijeci:
+                poruka="Lista je prazna"
+            else:
+                lista_rijeci.pop()
+                poruka = "Zadnja riječ je izbrisana."
+
+    return render_template('list.html', rijeci=lista_rijeci, poruka=poruka)
 
 @app.route('/rjecnik', methods=['GET', 'POST'])
 def rjecnik_stranica():
@@ -87,7 +104,16 @@ def petlja_stranica():
         # --- FOR PETLJA (Lesson 5) ---
         for znak in korisnikova_rijec:
             slova.append(znak.upper())
-    return render_template('loop.html', slova=slova)
+    return render_template('petlja-1.html', slova=slova)
+
+@app.route('/petlja_samoglasnici', methods=['GET', 'POST'])
+def petlja_samoglasnici():
+    broj = 0
+    if request.method == 'POST':
+        rijec = request.form.get('rijec', '')
+        # TODO: UČENIK: Prebroji samoglasnike (AEIOU) u rijeci
+        broj = "TODO"
+    return render_template('petlja-2.html', broj=broj)
 
 if __name__ == '__main__':
     app.run(debug=True)
