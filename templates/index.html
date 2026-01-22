@@ -1,16 +1,61 @@
-
 {% extends "base.html" %}
 {% block content %}
-    <h1>3. Liste (List)</h1>
-    <p>Lista pohranjuje više stavki u memoriju servera istovremeno.</p>
-    <form method="POST">
-        <input type="text" name="rijec" placeholder="Upišite riječ" required>
-        <button type="submit">Dodaj u listu</button>
-    </form>
-    <h3>Trenutna lista:</h3>
-    <ul>
-        {% for r in rijeci %}
-            <li>{{ r }}</li>
-        {% endfor %}
-    </ul>
+
+<h1>Dobrodošli na Python web radionicu</h1>
+
+<p>
+    U ovoj radionici naučit ćete kako se Python koristi za izradu
+    pravih web aplikacija.
+</p>
+
+<p>
+    Već znate osnove programiranja (npr. <code>if</code> naredbe u C++),
+    a sada ćemo vidjeti kako se te iste ideje koriste u web developmentu.
+</p>
+
+<hr>
+
+<h2>Kako ovo funkcioniše?</h2>
+
+<ul>
+    <li>
+        <b>Frontend</b> (HTML/CSS) – ono što korisnik vidi u pregledniku
+    </li>
+    <li>
+        <b>Backend</b> (Python + Flask) – logika, odluke i podaci na serveru
+    </li>
+</ul>
+
+<p>
+    Svaka stranica u meniju predstavlja jedan programski koncept
+    i pokazuje kako se on koristi u backend-u.
+</p>
+
+<hr>
+
+<h2>Šta ćemo učiti?</h2>
+
+<ul>
+    <li>1. Ispis – kako server ispisuje poruke i šalje podatke stranici</li>
+    <li>2. Ako / Inače – donošenje odluka</li>
+    <li>3. Liste – pamćenje više vrijednosti</li>
+    <li>4. Rječnici – povezivanje pojmova i značenja</li>
+    <li>5. Petlje – ponavljanje i obrada teksta</li>
+</ul>
+
+<hr>
+
+<h2>Kako će ovo ići?</h2>
+
+<ol>
+    <li>Otvorite jednu lekciju iz menija</li>
+    <li>Pročitajte kratko objašnjenje</li>
+    <li>Promijenite Python kod (gdje piše <code>TODO</code>)</li>
+    <li>Osvježite stranicu i pogledajte rezultat</li>
+</ol>
+
+<div class="result-box">
+    💡 Ne možete ništa pokvariti. Eksperimentišite!
+</div>
+
 {% endblock %}
