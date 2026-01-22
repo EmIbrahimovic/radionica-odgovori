@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <h1>3. lists</h1>
+    <p>A list stores many items in the server's memory.</p>
+    <form method="POST">
+        <input type="text" name="word" placeholder="Type a word" required>
+        <button type="submit">Add</button>
+    </form>
+    <h3>Current List:</h3>
+    <ul>
+        {% for w in words %}
+            <li>{{ w }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

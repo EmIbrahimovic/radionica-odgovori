@@ -1,0 +1,15 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <h1>5. for loops</h1>
+    <p>A loop processes data one item at a time.</p>
+    <form method="POST">
+        <input type="text" name="word" placeholder="Word to split" required>
+        <button type="submit">Split</button>
+    </form>
+    <div class="letter-row">
+        {% for L in letters %}
+            <div class="box">{{ L }}</div>
+        {% endfor %}
+    </div>
+{% endblock %}

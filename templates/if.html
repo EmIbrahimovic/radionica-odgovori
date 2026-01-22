@@ -1,0 +1,15 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <h1>2. if / else</h1>
+    <p>The server uses <b>logic</b> to decide what to show you.</p>
+    <form method="POST">
+        <input type="number" name="age" placeholder="Enter age" required>
+        <button type="submit">Check</button>
+    </form>
+    {% if message %}
+        <div class="result-box">
+            <b>Result:</b> {{ message }}
+        </div>
+    {% endif %}
+{% endblock %}

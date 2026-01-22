@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% block content %}
+    <h1>4. Dictionaries</h1>
+    <p>A dictionary maps <b>Keys</b> to <b>Values</b>. Click a button to see what the server has stored for that mood key.</p>
+    
+    <form method="POST" class="button-group">
+        <button type="submit" name="mood" value="happy" class="mood-btn">😊 Happy</button>
+        <button type="submit" name="mood" value="sad" class="mood-btn">😢 Sad</button>
+        <button type="submit" name="mood" value="tired" class="mood-btn">😴 Tired</button>
+    </form>
+
+    {% if answer %}
+        <div class="result-box">
+            <b>Server lookup result:</b>
+            <p style="margin: 0; font-size: 1.1rem; color: #1e293b;">{{ answer }}</p>
+        </div>
+    {% endif %}
+    
+    <div style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #f1f5f9; font-size: 0.875rem; color: #64748b;">
+        <p><b>Backend Tip:</b> Each button has a unique <code>value</code>. Python uses <code>mood_responses.get(value)</code> to find the matching message in a fraction of a second!</p>
+    </div>
+{% endblock %}
