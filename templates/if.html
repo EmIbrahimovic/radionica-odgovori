@@ -2,14 +2,14 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>2. if / else</h1>
-    <p>The server uses <b>logic</b> to decide what to show you.</p>
+    <p>Server koristi <b>logiku</b> kako bi odlučio šta će vam prikazati.</p>
     <form method="POST">
-        <input type="number" name="age" placeholder="Enter age" required>
-        <button type="submit">Check</button>
+        <input type="number" name="godine" placeholder="Unesite broj godina" required>
+        <button type="submit">Provjeri</button>
     </form>
-    {% if message %}
+    {% if poruka %}
         <div class="result-box">
-            <b>Result:</b> {{ message }}
+            <b>Rezultat:</b> {{ poruka }}
         </div>
     {% endif %}
 {% endblock %}

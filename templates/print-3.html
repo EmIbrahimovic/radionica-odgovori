@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>1.3 Tekst od korisnika</h1>
+
+    <p>
+        Unesite tekst. Server će ga primiti i vratiti nazad.
+    </p>
+
+    <form method="post">
+        <input type="text" name="tekst" placeholder="Upiši nešto..." required>
+        <button type="submit">Pošalji</button>
+    </form>
+
+    {% if uneseni_tekst %}
+        <div class="result-box">
+            <b>Server kaže:</b> {{ uneseni_tekst }}
+        </div>
+    {% endif %}
+{% endblock %}

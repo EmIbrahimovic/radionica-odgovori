@@ -1,15 +1,15 @@
 
 {% extends "base.html" %}
 {% block content %}
-    <h1>5. for loops</h1>
-    <p>A loop processes data one item at a time.</p>
+    <h1>5. for petlje (Loops)</h1>
+    <p>Petlja obrađuje podatke jedan po jedan (stavku po stavku).</p>
     <form method="POST">
-        <input type="text" name="word" placeholder="Word to split" required>
-        <button type="submit">Split</button>
+        <input type="text" name="rijec" placeholder="Riječ za rastavljanje" required>
+        <button type="submit">Rastavi</button>
     </form>
     <div class="letter-row">
-        {% for L in letters %}
-            <div class="box">{{ L }}</div>
+        {% for s in slova %}
+            <div class="box">{{ s }}</div>
         {% endfor %}
     </div>
 {% endblock %}
