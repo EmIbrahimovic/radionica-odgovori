@@ -25,7 +25,7 @@ def pocetna():
 def ispis_stranica():
     # --- PRINT (Lekcija 1) ---
     print("LOG: Neko je posjetio stranicu za ispis!")
-    return render_template('print.html')
+    return render_template('print-1.html')
 
 @app.route('/varijabla')
 def varijabla_stranica():
@@ -34,7 +34,7 @@ def varijabla_stranica():
     # Promijeni vrijednost ove varijable
     poruka = "Zdravo iz backend-a!"
 
-    return render_template('variable.html', poruka=poruka)
+    return render_template('print-2.html', poruka=poruka)
 
 @app.route('/unos', methods=['GET', 'POST'])
 def unos_stranica():
@@ -46,7 +46,7 @@ def unos_stranica():
         # Dohvati tekst koji je korisnik upisao u input polje
         uneseni_tekst = request.form.get('tekst', '')
 
-    return render_template('input.html', uneseni_tekst=uneseni_tekst)
+    return render_template('print-3.html', uneseni_tekst=uneseni_tekst)
 
 
 @app.route('/ako', methods=['GET', 'POST'])
